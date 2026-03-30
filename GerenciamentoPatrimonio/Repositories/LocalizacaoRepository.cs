@@ -15,8 +15,7 @@ namespace GerenciamentoPatrimonio.Repositories
 
         public List<Localizacao> Listar()
         {
-            return _context.Localizacao
-                .OrderBy(localizacao => localizacao.NomeLocal).ToList();
+            return _context.Localizacao.OrderBy(localizacao => localizacao.NomeLocal).ToList();
         }
 
         public Localizacao BuscarPorId(Guid localizacaoId)
@@ -53,6 +52,15 @@ namespace GerenciamentoPatrimonio.Repositories
             localizacaoBanco.LocalSAP = localizacao.LocalSAP;
             localizacaoBanco.DescricaoSAP = localizacao.DescricaoSAP;
             localizacaoBanco.AreaID = localizacao.AreaID;
+
+            _context.SaveChanges();
+        }
+
+        public Localizacao BuscarPorNome(string nomeLocal, Guid areaId)
+        {
+
+            return _context.Localizacao.FirstOrDefault(local => local.NomeLocal.ToLower() == nomeLocal.ToLower() && local.AreaID == areaId
+            );
         }
     }
 }
