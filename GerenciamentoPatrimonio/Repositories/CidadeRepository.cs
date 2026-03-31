@@ -30,8 +30,8 @@ namespace GerenciamentoPatrimonio.Repositories
 
         public void Adicionar(Cidade cidade)
         {
-            _context.Cidade.Add(cidade);    
-            _context.SaveChanges(); 
+            _context.Cidade.Add(cidade);
+            _context.SaveChanges();
         }
 
         public void Atualizar(Cidade cidade)
@@ -52,4 +52,5 @@ namespace GerenciamentoPatrimonio.Repositories
             cidadeBanco.Estado = cidade.Estado;
             _context.SaveChanges();
         }
+    }
 }

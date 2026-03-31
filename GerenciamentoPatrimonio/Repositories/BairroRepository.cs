@@ -31,9 +31,9 @@ namespace GerenciamentoPatrimonio.Repositories
             );
         }
 
-        public Bairro CidadeExiste(Guid CidadeId)
+        public bool CidadeExiste(Guid CidadeId)
         {
-            return _context.Bairro.Any(CidadeId);
+            return _context.Bairro.Any(bairro => bairro.CidadeID == CidadeId);
         }
 
         public void Adicionar(Bairro bairro)
@@ -59,7 +59,5 @@ namespace GerenciamentoPatrimonio.Repositories
             bairroBanco.NomeBairro = bairro.NomeBairro;
             _context.SaveChanges();
         }
-
-
     }
 }

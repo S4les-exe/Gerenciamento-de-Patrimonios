@@ -29,6 +29,8 @@ public partial class Usuario
 
     public Guid TipoUsuarioID { get; set; }
 
+    public bool PrimeiroAcesso { get; set; }
+
     public virtual Cargo Cargo { get; set; } = null!;
 
     public virtual Endereco Endereco { get; set; } = null!;

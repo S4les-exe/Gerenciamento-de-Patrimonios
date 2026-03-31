@@ -18,7 +18,7 @@ namespace GerenciamentoPatrimonio.Repositories
             return _context.Endereco.OrderBy(endereco => endereco.CEP).ToList();
         }
 
-        public BuscarPorId(Guid EnderecoId)
+        public Endereco BuscarPorId(Guid EnderecoId)
         {
             return _context.Endereco.Find(EnderecoId);
         }
@@ -31,9 +31,9 @@ namespace GerenciamentoPatrimonio.Repositories
                 );
         }
 
-        Endereco BairroExiste(Guid bairroId)
+        public bool BairroExiste(Guid bairroId)
         {
-            return _context.Endereco.Any(bairroId);
+            return _context.Endereco.Any(endereco => endereco.BairroID == bairroId);
         }
 
         public void Adicionar(Endereco endereco)

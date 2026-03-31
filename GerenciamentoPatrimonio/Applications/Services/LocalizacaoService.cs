@@ -37,7 +37,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
 
             if(localizacao == null)
             {
-                throw new CannotUnloadAppDomainException("Localização não encontrada");
+                throw new DomainException("Localização não encontrada");
             }
 
             ListarLocalizacaoDto localizacaoDto = new ListarLocalizacaoDto
