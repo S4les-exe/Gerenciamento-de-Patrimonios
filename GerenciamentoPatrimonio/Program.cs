@@ -43,6 +43,10 @@ builder.Services.AddScoped<CidadeService>();
 builder.Services.AddScoped<IBairroRepository, BairroRepository>();
 builder.Services.AddScoped<BairroService>();
 
+// ENDERECO
+builder.Services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+builder.Services.AddScoped<EnderecoService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

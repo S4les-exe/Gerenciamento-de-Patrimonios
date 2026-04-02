@@ -1,4 +1,5 @@
 ﻿using GerenciamentoPatrimonio.Applications.Services;
+using GerenciamentoPatrimonio.DTOs.CargoDto;
 using GerenciamentoPatrimonio.DTOs.UsuarioDto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,12 @@ namespace GerenciamentoPatrimonio.Controllers
         {
             List<ListarUsuarioDto> usuarios = _service.Listar();
             return Ok(usuarios);
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<ListarCargoDto> BuscarPorId(Guid id)
+        {
+
         }
     }
 }

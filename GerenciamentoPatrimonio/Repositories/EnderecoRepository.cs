@@ -23,12 +23,21 @@ namespace GerenciamentoPatrimonio.Repositories
             return _context.Endereco.Find(EnderecoId);
         }
 
-        public Endereco BuscarPorLogradouroENumero(string logradouro, int? numero, Guid bairroId)
+        public Endereco BuscarPorLogradouroENumero(string logradouro, int? numero, Guid bairroId, Guid? enderecoId = null)
         {
-            return _context.Endereco.FirstOrDefault(endereco => endereco.Logradouro.ToLower() == logradouro.ToLower()
+            var consulta = _context.Endereco.AsQueryable();
+
+            if (enderecoId.HasValue)
+            {
+                consulta = consulta.Where(endereco => endereco.EnderecoID != enderecoId.Value);
+            }
+
+            return consulta.FirstOrDefault(endereco =>
+                   endereco.Logradouro.ToLower() == logradouro.ToLower() 
                 && endereco.Numero == numero 
                 && endereco.BairroID == bairroId
-                );
+                && endereco.EnderecoID == enderecoId
+            );
         }
 
         public bool BairroExiste(Guid bairroId)
@@ -60,6 +69,7 @@ namespace GerenciamentoPatrimonio.Repositories
             enderecoBanco.Numero = endereco.Numero;
             enderecoBanco.Complemento = endereco.Complemento;   
             enderecoBanco.CEP = endereco.CEP;   
+
             _context.SaveChanges();
         }
     }

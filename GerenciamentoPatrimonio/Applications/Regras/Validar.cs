@@ -19,5 +19,13 @@ namespace GerenciamentoPatrimonio.Applications.Regras
                 throw new DomainException("Estado é obrigatório.");
             }
         }
+
+        public static void ValidarLogradouro(string logradouro)
+        {
+            if (string.IsNullOrWhiteSpace(logradouro))
+            {
+                throw new DomainException("Logradouro é obrigatório.");
+            }
+        }
     }
 }
