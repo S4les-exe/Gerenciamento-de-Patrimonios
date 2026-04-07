@@ -27,5 +27,37 @@ namespace GerenciamentoPatrimonio.Applications.Regras
                 throw new DomainException("Logradouro é obrigatório.");
             }
         }
+
+        public static void ValidarNIF(string nif)
+        {
+            if(string.IsNullOrWhiteSpace(nif))
+            {
+                throw new DomainException("NIF é obrigatório.");
+            }
+        }
+
+        public static void ValidarCPF(string cpf)
+        {
+            if(string.IsNullOrWhiteSpace(cpf))
+            {
+                throw new DomainException("CPF é obrigatório");
+            }
+        }
+
+        public static void ValidarEmail(string email)
+        {
+            if(string.IsNullOrWhiteSpace(email))
+            {
+                throw new DomainException("Email é obrigatório");
+            }
+        }
+
+        public static void ValidarSenha(string senha)
+        {
+            if(string.IsNullOrWhiteSpace(senha))
+            {
+                throw new DomainException("Senha é obrigatoria");
+            }
+        }
     }
 }
