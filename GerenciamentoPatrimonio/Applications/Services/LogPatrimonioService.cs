@@ -9,8 +9,6 @@ namespace GerenciamentoPatrimonio.Applications.Services
     {
         private readonly ILogPatrimonioRepository _repository;
 
-        public LogPatrimonioService _repository;
-
         public LogPatrimonioService(ILogPatrimonioRepository repository)
         {
             _repository = repository;
@@ -22,7 +20,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
 
             List<ListarLogPatrimonioDto> logsDto = logs.Select(log => new ListarLogPatrimonioDto
             {
-                LogPatrimonioID = log.LogPatrimonioID,
+                LogPatrimonioID = log.LogPatrimonio1,
                 DataTransferencia = log.DataTransferencia,
                 PatrimonioID = log.PatrimonioID,
                 DenominacaoPatrimonio = log.Patrimonio.Denominacao,
@@ -46,7 +44,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
 
             List<ListarLogPatrimonioDto> logsDto = logs.Select(log => new ListarLogPatrimonioDto
             {
-                LogPatrimonioID = log.LogPatrimonioID,
+                LogPatrimonioID = log.LogPatrimonio1,
                 DataTransferencia = log.DataTransferencia,
                 PatrimonioID = log.PatrimonioID,
                 DenominacaoPatrimonio = log.Patrimonio.Denominacao,

@@ -28,6 +28,4 @@ public partial class Patrimonio
     public virtual ICollection<SolicitacaoTransferencia> SolicitacaoTransferencia { get; set; } = new List<SolicitacaoTransferencia>();
 
     public virtual StatusPatrimonio StatusPatrimonio { get; set; } = null!;
-
-    public virtual TipoPatrimonio TipoPatrimonio { get; set; } = null!;
 }

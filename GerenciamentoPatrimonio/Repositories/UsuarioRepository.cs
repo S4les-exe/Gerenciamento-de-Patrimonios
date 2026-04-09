@@ -127,5 +127,23 @@ namespace GerenciamentoPatrimonio.Repositories
             usuarioBanco.Senha = usuario.Senha;
             _context.SaveChanges();
         }
+
+        public void AtualizarPrimeiroAcesso (Usuario usuario)
+        {
+            if (usuario == null)
+            {
+                return;
+            }
+
+            Usuario usuarioBanco = _context.Usuario.Find(usuario.UsuarioID);
+
+            if (usuarioBanco == null)
+            {
+                return;
+            }
+
+            usuarioBanco.PrimeiroAcesso = usuario.PrimeiroAcesso;
+            _context.SaveChanges();
+        }
     }
 }

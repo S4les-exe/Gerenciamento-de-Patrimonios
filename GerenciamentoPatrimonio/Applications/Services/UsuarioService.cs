@@ -115,7 +115,6 @@ namespace GerenciamentoPatrimonio.Applications.Services
                     NIF = dto.NIF,
                     CPF = dto.CPF,  
                     RG = dto.RG,
-                    CPF = dto.CPF,
                     CarteiraTrabalho = dto.CarteiraTrabalho,
                     Senha = CriptografiaUsuario.CriptografarSenha(dto.NIF),
                     Email = dto.Email,
@@ -178,7 +177,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
                 throw new DomainException("Tipo de usuario informado não existe.");
             }
 
-            usuarioBanco.NIF = dt-o.NIF;
+            usuarioBanco.NIF = dto.NIF;
             usuarioBanco.Nome = dto.Nome;
             usuarioBanco.CPF = dto.CPF;
             usuarioBanco.CarteiraTrabalho = dto.CarteiraTrabalho;
@@ -190,7 +189,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
             _repository.Atualizar(usuarioBanco);
         }
 
-        public void AtualizarStatus(Guid usuarioId, AtualizarSenhaUsuarioDto dto)
+        public void AtualizarStatus(Guid usuarioId, AtualizarStatusUsuarioDto dto)
         {
             Usuario usuarioBanco = _repository.BuscarPorId(usuarioId);
 
