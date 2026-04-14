@@ -89,6 +89,10 @@ builder.Services.AddScoped<StatusPatrimonioService>();
 builder.Services.AddScoped<ISolicitacaoTransferenciaRepository, SolicitacaoTransferenciaRepository>();
 builder.Services.AddScoped<SolicitacaoTransferenciaService>();
 
+// PATRIMONIO
+builder.Services.AddScoped<IPatrimonioRepository, PatrimonioRepository>();
+builder.Services.AddScoped<PatrimonioService>();
+
 // JWT 
 builder.Services.AddScoped<GeradorTokenJwt>();
 builder.Services.AddScoped<AutenticacaoService>();

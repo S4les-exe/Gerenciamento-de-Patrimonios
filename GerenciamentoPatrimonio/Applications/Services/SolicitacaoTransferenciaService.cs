@@ -117,7 +117,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
                 DataCriacaoSolicitante = DateTime.Now,
                 Justificativa = dto.Justificativa,
                 StatusTransferenciaID = statusPendente.StatusTransferenciaID,
-                UsuarioIDSolicitacao = usuarioId,
+                UsuarioIDSolicitacao = usuarioID,
                 UsuarioIDAprovacao = null,
                 PatrimonioID = dto.PatrimonioID,
                 LocalizacaoID = dto.LocalizacaoID,

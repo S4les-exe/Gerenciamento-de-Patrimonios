@@ -54,4 +54,5 @@ namespace GerenciamentoPatrimonio.Repositories
 
             _context.SaveChanges();
         }
+    }
 }
